@@ -21,8 +21,8 @@ public class DnsAutoTest {
 
   @Test
   public void openPage() {
-    driver.get("https://yandex.ru/");
-    logger.info("Открыта страница Yandex - " + "https://yandex.ru/");
+    driver.get("https://www.dns-shop.ru");
+    logger.info("Открыта страница Yandex - " + "https://www.dns-shop.ru");
   }
 
   @AfterEach

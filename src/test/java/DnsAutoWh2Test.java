@@ -10,11 +10,11 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
-
-public class DnsAutoTest {
+public class DnsAutoWh2Test {
   protected static WebDriver driver;
-  final private Logger logger = LogManager.getLogger(DnsAutoTest.class);
+  final private Logger logger = LogManager.getLogger(DnsAutoWh2Test.class);
 
   //читаем передаваемый праметр browser по ключ-значению, параметризированный запуск
   String env = System.getProperty("browser", "chrome");
@@ -34,9 +34,9 @@ public class DnsAutoTest {
     //1.открытие страницы
     driver.get("https://www.dns-shop.ru");
     //общие настройки браузера
-    driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+    driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60));
     driver.manage().window().maximize();
-    logger.info("Открыта страница Yandex - " + "https://www.dns-shop.ru");
+    logger.info("Открыта страница DNS - " + "https://www.dns-shop.ru");
     logger.info("--------------------------------------");
 
     //2.вывод заголовка страцицы

@@ -28,8 +28,10 @@ public class WebDriverFactory {
           optionsChrome.setCapability(CapabilityType.SUPPORTS_JAVASCRIPT, false);
           optionsChrome.setPageLoadStrategy(PageLoadStrategy.fromString(pageLoadStrategy));
           optionsChrome.addArguments("--incognito");
+          optionsChrome.addArguments("--window-size=1920,1080");
           logger.info("Драйвер для браузера Chrome");
           return new ChromeDriver(optionsChrome);
+
         case "firefox":
           WebDriverManager.firefoxdriver().setup();
           FirefoxOptions optionsFireFox = new FirefoxOptions();
@@ -38,8 +40,10 @@ public class WebDriverFactory {
           optionsFireFox.setCapability(CapabilityType.SUPPORTS_JAVASCRIPT, false);
           optionsFireFox.setPageLoadStrategy(PageLoadStrategy.fromString(pageLoadStrategy));
           optionsFireFox.addArguments("-private");
+          optionsFireFox.addArguments("--window-size=1920,1080");
           logger.info("Драйвер для браузера Firefox");
           return new FirefoxDriver(optionsFireFox);
+
         default:
           throw new RuntimeException("Incorrect browser name");
       }
@@ -47,7 +51,6 @@ public class WebDriverFactory {
    } else {
       throw new RuntimeException("Incorrect page load strategy");
     }
-
   }
 }
 
